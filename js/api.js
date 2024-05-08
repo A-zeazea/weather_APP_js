@@ -1,9 +1,9 @@
 const api_key = '9e9ed82cf1e873767c4779c7423ac042';
 
-export const urls = {
+export const url = {
   // 데이터를 요청하는 주소 = endpoint, urls
   currentWeather(lat, lon) {
-    return `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=matric`;
+    return `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric`;
   },
 
   geocode(loca) {
@@ -13,19 +13,18 @@ export const urls = {
 
 /**
  *
- * @param {*} url
- * @param {*} callback
+ * @param {string} url
+ * @param {function} callback
  */
 
-const fetchData = function (url, callback) {
+export const fetchData = function (url, callback) {
   fetch(`${url}&appid=${api_key}`)
     .then((response) => response.json())
     .then((data) => callback(data))
     .catch((error) => console.log(error));
 };
 
-fetchData(urls.geocode('london'), function (locations) {
-  console.log(locations);
-});
-
-// 구조분해 할당
+// fetchData(urls.geocode('london'), function (locations) {
+//   console.log(locations);
+// });
+// // 구조분해 할당

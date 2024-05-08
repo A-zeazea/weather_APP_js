@@ -1,3 +1,5 @@
+import {url, fetchData} from './api.js'
+
 /**
  * @param {NodeList} elmts - selected elements from HTML to ad events
  * @param {string} event - event type e.g 'click', 'mouseenter'...
@@ -12,3 +14,5 @@ export function eventOnElmts(elmts, event, callback) {
     elmt.addEventListener(event, callback);
   }
 }
+
+// console.log(url);

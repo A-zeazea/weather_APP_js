@@ -404,6 +404,11 @@ body {
   }
 }
 
+/*  자식 태그 중에서 searching이라는 클래스를 가질 때, before의 속성을 변화 */
+.search-wrapper:has(.searching)::before{
+  display: block;
+}
+
 .search-wrapper > .m-icon {
   display: none;
 }
