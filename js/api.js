@@ -1,9 +1,9 @@
 const api_key = '9e9ed82cf1e873767c4779c7423ac042';
 
 export const url = {
-  // 데이터를 요청하는 주소 = endpoint, urls
+  // 데이터를 요청하는 주소 = endpoint, url 객체로 설정
   currentWeather(lat, lon) {
-    return `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric`;
+    return `https://api.openweathermap.org/data/2.5/weather?${lat}&${lon}&units=metric`;
   },
 
   geocode(loca) {
@@ -11,8 +11,12 @@ export const url = {
   },
 
   forcast(lat, lon) {
-    return `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric`;
-  }
+    return `https://api.openweathermap.org/data/2.5/forecast?${lat}&${lon}&units=metric`;
+  },
+
+  airPollution(lat,lon) {
+    return `https://api.openweathermap.org/data/2.5/air_pollution?${lat}&${lon}&units=metric`
+  },
 };
 
 /**
